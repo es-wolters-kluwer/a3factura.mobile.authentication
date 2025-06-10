@@ -66,7 +66,7 @@ class _WebViewExampleState extends State<WebViewExample> {
 
 
 
-  Future<void> openDialog2(String texto, String url) async {
+  Future<void> openDialogWithResult(String texto, String url) async {
   return showDialog(
     context: context,
     barrierDismissible: false,
@@ -102,6 +102,6 @@ class _WebViewExampleState extends State<WebViewExample> {
       var urlLocal = Uri.parse(urlGetToken +code.toString());
       var response = await http.get(urlLocal);
       var json = response.body;
-      openDialog2(json, url + '\n\n' + urlLocal.toString());      
+      openDialogWithResult(json, url + '\n\n' + urlLocal.toString());      
   }
 }
